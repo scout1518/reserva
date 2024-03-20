@@ -1,0 +1,197 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1066A4;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+}
+
+.logo {
+    max-width: 250px;
+    height: auto;
+    margin-left: 20px; /* Cambiado a margin-left */
+}
+
+h2 {
+    margin-top: 20px; /* Modificado para añadir espacio entre el botón y el título */
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-agregar {
+    background-color: #4CAF50;
+    border: 1px solid #4CAF50;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+    align-self: flex-start; /* Mueve el botón a la izquierda */
+    margin-bottom: 20px; /* Añade espacio entre el botón y el título */
+}
+
+.btn-agregar:hover {
+    background-color: #fff;
+    color: #000; /* Cambia el color del texto al hacer hover */
+    cursor: pointer;
+    border-color: #4CAF50; /* Cambia el color del borde al hacer hover */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+table tr:nth-child(even) {
+    background-color: #eee;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+.reservas-pasadas {
+    font-size: 1.3rem;
+    margin-left: auto; /* Alinea "Registros pasados" a la derecha */
+}
+
+.reservas-pasadas:hover {
+    background-color: #fff;
+    color: #000; /* Cambia el color del texto al hacer hover */
+    cursor: pointer;
+    border-color: #4CAF50; /* Cambia el color del borde al hacer hover */
+
+}
+
+
+/* Estilos para el contenido del modal */
+.modal-content {
+    background-color: #fefefe; /* Fondo blanco */
+    margin: 10% auto; /* Margen superior e inferior, centrado horizontalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    position: absolute; /* Posicionamiento absoluto */
+    top: -20px; /* Distancia desde la parte superior */
+    left: 50%; /* Sitúa el contenido en el centro horizontalmente */
+    width: 80%; /* Ancho del modal */
+    transform: translateX(-50%); /* Centra el contenido horizontalmente */
+    max-width: 600px; /* Ancho máximo del modal */
+    z-index: 1000; /* Asegura que el modal esté por encima del resto del contenido */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Estilos para los labels dentro del formulario */
+.modal-content label {
+    display: block; /* Cada label en una línea */
+    margin-bottom: 10px; /* Espacio entre labels */
+}
+
+/* Estilos para los inputs dentro del formulario */
+.modal-content input[type="text"],
+.modal-content input[type="datetime-local"] {
+    width: calc(100% - 10px); /* Ancho total menos el margen */
+    padding: 8px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris */
+    border-radius: 5px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluir el padding en el ancho total */
+}
+
+/* Estilos para el botón de submit */
+.modal-content input[type="submit"] {
+    background-color: #1066A4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos para el botón de submit al pasar el ratón por encima */
+.modal-content input[type="submit"]:hover {
+    background-color: #0e5481;
+}
+
+.close {
+    background-color: red;
+    color: white;
+    border: none;
+    width: 30px; /* Ajusta el tamaño según lo necesites */
+    height: 30px; /* Ajusta el tamaño según lo necesites */
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 30px; /* Centra el texto verticalmente */
+    cursor: pointer;
+    position: absolute;
+    top: 10px; /* Ajusta la posición verticalmente según lo necesites */
+    right: 10px; /* Ajusta la posición horizontalmente según lo necesites */
+    border-radius: 5px; /* Agrega esquinas redondeadas */
+}
+
+/* Agrega este estilo para ocultar el modal inicialmente */
+.modal {
+    display: none;
+}
+
+/* Estilos para el fondo oscurecido */
+.overlay {
+    position: fixed; /* Posicionamiento fijo para cubrir toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Color de fondo semi-transparente */
+    z-index: 999; /* Asegura que esté por debajo del modal pero encima del resto del contenido */
+    display: none; /* Inicialmente oculto */
+}
+
+/* Estilos para el fondo oscurecido cuando el modal está abierto */
+.modal.active + .overlay {
+    display: block;
+}
+
+/* Estilos para los labels dentro del formulario */
+.modal-content label {
+    display: block; /* Cada label en una línea */
+    margin-bottom: 10px; /* Espacio entre labels */
+    font-weight: bold; /* Negrita para los labels */
+    color: #333; /* Color de texto para los labels */
+}
+
+/* Estilos específicos para los labels de ID y Fecha */
+.modal-content label[for="id"],
+.modal-content label[for="fecha"] {
+    color: #1066A4; /* Color de texto diferente para ID y Fecha */
+}

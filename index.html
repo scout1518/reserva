@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Control panel Salas</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<header>
+    <nav class="menu">
+        <img src="https://lh3.googleusercontent.com/pw/AP1GczNVtqpy-E3BVf7jknj0ELdoYMKLQLIkXfcZnISWKa_5H6cFunSsi-4YwTgv3hjREB6GZmgg00Br1xPH00vwgF_FjUa3rGtler09YEOG_d0d_UA-L5BAqIym7RNbsaQF9JOls81eZX2N-4IgeuUieS5qPQ=w300-h98-s-no-gm?authuser=0" alt="Tu Logo" class="logo">
+        <button class="btn-agregar reservas-pasadas">Registros pasados</button>
+    </nav>
+</header>
+<main>
+    <h2>Reservas de Laboratorio- EICT</h2>
+    <button id="btn-agregar" class="btn-agregar">Agregar Reserva</button>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Laboratorio</th>
+            <th>Fecha y Hora</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>Estudiante I</td>
+            <td>REDES</td>
+            <td>1/07/2020 15:00-14:00</td>
+        </tr>
+        <tr>
+            <td>11123123</td>
+            <td>Estudiante 2</td>
+            <td>Computación</td>
+            <td>11/07/2020 15:00-14:00</td>
+        </tr>
+        <tr>
+            <td>1231232</td>
+            <td>Estudiante 3</td>
+            <td>Comunicaciones</td>
+            <td>11/07/2020 13:00-14:00</td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeButton">&times;</span>
+        <form id="reservation-form">
+            <label for="id">ID:</label>
+            <input type="text" id="id" name="id">
+            <br><br>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+            <br><br>
+            <label for="carrera">Carrera:</label>
+            <input type="text" id="carrera" name="carrera">
+            <br><br>
+            <label for="laboratorio">Laboratorio:</label>
+            <input type="text" id="laboratorio" name="laboratorio">
+            <br><br>
+            <label for="fecha">Fecha:</label>
+            <input type="datetime-local" id="fecha" name="fecha" min="2024-01-01T08:00" max="2024-01-01T22:00">
+            <br><br>
+            <input type="submit" value="Agregar">
+        </form>
+    </div>
+</div>
+<!-- Elemento para el fondo oscurecido -->
+<div class="overlay"></div>
+<script src="index.js"></script>
+</body>
+</html>
